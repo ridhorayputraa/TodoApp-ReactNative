@@ -1,8 +1,7 @@
-import { StyleSheet, Button, Text, View, TextInput } from "react-native";
+import { StyleSheet,Alert ,Button, Text, View, TextInput } from "react-native";
 import React, { useState } from "react";
 import Card from "../component/Card/Card";
 import axios from "axios";
-import { Alert } from "react-native/Libraries/Alert/Alert";
 
 export default function Container() {
   const [nameTodo, setNameTodo] = useState("");
@@ -20,7 +19,7 @@ export default function Container() {
         console.log('Input di terima: ', res)
         setDescTodo("")
         setNameTodo("")
- Alert.alert('Berhasil', 'Anda berhasil menghapus user ini')
+ Alert.alert('Congralute', 'Your adding new task')
     })
     
   }
