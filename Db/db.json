@@ -1,9 +1,14 @@
 {
-"todo" : [
-  {
-    "id" : 1,
-    "name" : "Makan bawal",
-    "desc" : "Makan bawal di bawelin"
-  }
-]
+  "todo": [
+    {
+      "id": 1,
+      "name": "Makan bawal",
+      "desc": "Makan bawal di bawelin"
+    },
+    {
+      "nameTodo": "",
+      "descTodo": "",
+      "id": 2
+    }
+  ]
 }

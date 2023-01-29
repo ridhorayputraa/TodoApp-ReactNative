@@ -1,6 +1,8 @@
 import { StyleSheet, Button, Text, View, TextInput } from "react-native";
 import React, { useState } from "react";
 import Card from "../component/Card/Card";
+import axios from "axios";
+import { Alert } from "react-native/Libraries/Alert/Alert";
 
 export default function Container() {
   const [nameTodo, setNameTodo] = useState("");
@@ -13,7 +15,13 @@ export default function Container() {
         descTodo
     }
 
-    console.log("Inpput Data: ",data)
+    axios.post('http://192.168.0.2:3000/todo', data)
+    .then(res => {
+        console.log('Input di terima: ', res)
+        setDescTodo("")
+        setNameTodo("")
+ Alert.alert('Berhasil', 'Anda berhasil menghapus user ini')
+    })
     
   }
 
