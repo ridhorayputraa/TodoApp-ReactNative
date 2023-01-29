@@ -6,6 +6,7 @@ import axios from "axios";
 export default function Container() {
   const [nameTodo, setNameTodo] = useState("");
   const [descTodo, setDescTodo] = useState("");
+  const [tasl, setTask] = useState([]);
 
   function submit() {
     data = {
@@ -21,7 +22,7 @@ export default function Container() {
         Alert.alert("Congralute", "Your adding new task");
       });
     } else {
-      Alert.alert("Failed", "Please Fill the Name");
+      Alert.alert("Failed", "Please the text");
     }
   }
 
