@@ -1,4 +1,4 @@
-import { StyleSheet,Alert ,Button, Text, View, TextInput } from "react-native";
+import { StyleSheet, Alert, Button, Text, View, TextInput } from "react-native";
 import React, { useState } from "react";
 import Card from "../component/Card/Card";
 import axios from "axios";
@@ -7,21 +7,22 @@ export default function Container() {
   const [nameTodo, setNameTodo] = useState("");
   const [descTodo, setDescTodo] = useState("");
 
-
-  function submit(){
+  function submit() {
     data = {
-        nameTodo,
-        descTodo
-    }
+      nameTodo,
+      descTodo,
+    };
 
-    axios.post('http://192.168.0.2:3000/todo', data)
-    .then(res => {
-        console.log('Input di terima: ', res)
-        setDescTodo("")
-        setNameTodo("")
- Alert.alert('Congralute', 'Your adding new task')
-    })
-    
+    if (data.nameTodo != "" || data.descTodo != "") {
+      axios.post("http://192.168.0.2:3000/todo", data).then((res) => {
+        console.log("Input di terima: ", res);
+        setDescTodo("");
+        setNameTodo("");
+        Alert.alert("Congralute", "Your adding new task");
+      });
+    } else {
+      Alert.alert("Failed", "Please Fill the Name");
+    }
   }
 
   return (
@@ -34,8 +35,18 @@ export default function Container() {
       {/* Form Wrapper */}
       <View>
         <View style={styles.input}>
-          <TextInput value={nameTodo} onChangeText={(value) => setNameTodo(value) } style={styles.name} placeholder="Task name here...." />
-          <TextInput value={descTodo} onChangeText={(value) => setDescTodo(value) } style={styles.desc} placeholder="Description" />
+          <TextInput
+            value={nameTodo}
+            onChangeText={(value) => setNameTodo(value)}
+            style={styles.name}
+            placeholder="Task name here...."
+          />
+          <TextInput
+            value={descTodo}
+            onChangeText={(value) => setDescTodo(value)}
+            style={styles.desc}
+            placeholder="Description"
+          />
         </View>
         <Button onPress={submit} title="Add Task" />
       </View>
