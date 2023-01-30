@@ -37,6 +37,7 @@ function get(){
     }
     axios.get('http://192.168.0.2:3000/todo')
     .then(res => {
+      setTask(res.data)
       console.log('Data dari fetch: ', res.data)
     })
 }
@@ -48,6 +49,11 @@ function get(){
         <Text>Type Your Tasks Here</Text>
         <Text style={styles.Title}>TASKS 3</Text>
       </View>
+      {
+        task.map((data) => {
+            return <Card />
+        })
+      }
         <Card />
    
       {/* Form Wrapper */}
