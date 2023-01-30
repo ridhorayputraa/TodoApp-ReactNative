@@ -1,12 +1,16 @@
 import { StyleSheet, Alert, Button, Text, View, TextInput } from "react-native";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../component/Card/Card";
 import axios from "axios";
 
 export default function Container() {
   const [nameTodo, setNameTodo] = useState("");
   const [descTodo, setDescTodo] = useState("");
-  const [tasl, setTask] = useState([]);
+  const [task, setTask] = useState([]);
+
+useEffect(() => {
+get()
+}, [])
 
   function submit() {
     data = {
@@ -33,7 +37,7 @@ function get(){
     }
     axios.get('http://192.168.0.2:3000/todo')
     .then(res => {
-      console.log('Data dari fetch: ', res)
+      console.log('Data dari fetch: ', res.data)
     })
 }
 
