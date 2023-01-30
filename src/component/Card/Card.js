@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   cardWrapper: {
     borderWidth: 1.5,
     borderColor:'#f1f1f1',
-    padding: 20,
+    padding: 15,
     
     display: "flex",
     flexDirection: "row",

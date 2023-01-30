@@ -22,7 +22,7 @@ export default function Container() {
         Alert.alert("Congralute", "Your adding new task");
       });
     } else {
-      Alert.alert("Failed", "Please the text");
+      Alert.alert("Failed", "Please fill the text");
     }
   }
 
@@ -33,6 +33,7 @@ export default function Container() {
         <Text style={styles.Title}>TASKS 3</Text>
       </View>
         <Card />
+   
       {/* Form Wrapper */}
       <View>
         <View style={styles.input}>
@@ -75,6 +76,6 @@ const styles = StyleSheet.create({
     fontSize: 34,
   },
   wrapper: {
-    padding: 20,
+    padding: 15,
   },
 });
