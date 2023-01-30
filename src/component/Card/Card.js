@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // import CheckBox from "expo-checkbox";
 import CheckBox from "@react-native-community/checkbox";
 
-const Card = () => {
+const Card = ({name, desc}) => {
   const [isSelected, setSelection] = useState(false);
 
   return (
@@ -19,16 +19,16 @@ const Card = () => {
           {isSelected ? (
             <View style={styles.content}>
               <>
-                <Text style={styles.afterCheckHead}>Makan ikan bawal</Text>
-                <Text style={styles.afterCheckSub}>Makan ikan bawal</Text>
+                <Text style={styles.afterCheckHead}>{name}</Text>
+                <Text style={styles.afterCheckSub}>{desc}</Text>
               </>
             </View>
           ) : (
             <View style={styles.content}>
               <Text style={styles.head}>
-                Makan ikan bawal di knatin terdekatttttttttt
+                {name}
               </Text>
-              <Text style={styles.sub}>Makan ikan bawal</Text>
+              <Text style={styles.sub}>{desc}</Text>
             </View>
           )}
         {/* </View> */}

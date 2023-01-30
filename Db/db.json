@@ -2,13 +2,18 @@
   "todo": [
     {
       "id": 1,
-      "name": "Makan bawal",
-      "desc": "Makan bawal di bawelin"
+      "nameTodo": "Makan bawal",
+      "descTodo": "Makan bawal di bawelin"
     },
     {
       "nameTodo": "Makan ikan pedes",
       "descTodo": "",
       "id": 2
+    },
+    {
+      "nameTodo": "Jalan jalan",
+      "descTodo": "Jalan jalan ke mana tau jam 7 pagi",
+      "id": 3
     }
   ]
 }

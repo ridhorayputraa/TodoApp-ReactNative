@@ -7,7 +7,7 @@ export default function Container() {
   const [nameTodo, setNameTodo] = useState("");
   const [descTodo, setDescTodo] = useState("");
   const [task, setTask] = useState([]);
-
+const [numTask, setNumTask] = useState(0);
   useEffect(() => {
     get();
   }, []);
@@ -38,6 +38,10 @@ export default function Container() {
     };
     axios.get("http://192.168.0.2:3000/todo").then((res) => {
       setTask(res.data);
+      let data = res.data
+      for(let i = 0; i < data.length ; i++){
+        console.log("Data dari" , i +1)
+      }
       console.log("Data dari fetch: ", res.data);
     });
   }
@@ -46,12 +50,12 @@ export default function Container() {
     <View>
       <View style={styles.wrapper}>
         <Text>Type Your Tasks Here</Text>
-        <Text style={styles.Title}>TASKS 3</Text>
+        <Text style={styles.Title}>TASKS {numTask}</Text>
       </View>
       {task.map((data) => {
-        return <Card />;
+        return <Card key={data.id} name={data.nameTodo} desc={data.descTodo}/>;
       })}
-      <Card />
+  
 
       {/* Form Wrapper */}
       <View>
