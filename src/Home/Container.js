@@ -40,7 +40,8 @@ const [numTask, setNumTask] = useState(0);
       setTask(res.data);
       let data = res.data
       for(let i = 0; i < data.length ; i++){
-        console.log("Data dari" , i +1)
+        let data = i + 1
+        setNumTask(data)
       }
       console.log("Data dari fetch: ", res.data);
     });
