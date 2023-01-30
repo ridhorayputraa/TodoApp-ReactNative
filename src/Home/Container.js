@@ -47,6 +47,14 @@ const [numTask, setNumTask] = useState(0);
     });
   }
 
+  function deleteData(data){
+    console.log(data)
+      // axios.delete(`http://192.168.0.2:3000/todo/${data}`)
+      // .then(res => {
+      //   console.log("haloo gue di click: ", res.data)
+      // })
+  }
+
   return (
     <View>
       <View style={styles.wrapper}>
@@ -54,7 +62,7 @@ const [numTask, setNumTask] = useState(0);
         <Text style={styles.Title}>TASKS {numTask}</Text>
       </View>
       {task.map((data) => {
-        return <Card key={data.id} name={data.nameTodo} desc={data.descTodo}/>;
+        return <Card key={data.id} deleteData={() => deleteData(data.id)} name={data.nameTodo} desc={data.descTodo}/>;
       })}
   
 
