@@ -10,13 +10,23 @@ const Card = () => {
   return (
     <>
       <View style={styles.cardWrapper}>
-        <CheckBox style={styles.check} value={isSelected} onValueChange={setSelection} />
+        <CheckBox
+        
+          style={styles.check}
+          value={isSelected}
+          onValueChange={setSelection}
+        />
         {isSelected ? (
-          <Text style={styles.afterCheck}>Makan ikan bawal</Text>
+          <View style={styles.content}>
+            <>
+              <Text style={styles.afterCheck}>Makan ikan bawal</Text>
+              <Text style={styles.afterCheck}>Makan ikan bawal</Text>
+            </>
+          </View>
         ) : (
           <View style={styles.content}>
-          <Text>Makan ikan bawal</Text>
-          <Text>Makan ikan bawal</Text>
+            <Text>Makan ikan bawal</Text>
+            <Text>Makan ikan bawal</Text>
           </View>
         )}
       </View>
@@ -27,25 +37,23 @@ const Card = () => {
 export default Card;
 
 const styles = StyleSheet.create({
-  check:{
-marginBottom:10
+  content: {
+    marginTop: 1.2,
+    marginLeft: 2,
+    flexDirection: "column",
   },
-  content: { 
-    flexDirection:'column'
-   },
-  cardWrapper: {display:'flex',
-flexDirection:'row',
-alignItems:'flex-start',
-textAlign:"left",
-justifyContent:'flex-start'
-},
+  cardWrapper: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "flex-start",
+    textAlign: "left",
+    justifyContent: "flex-start",
+  },
   Title: {
     fontWeight: "bold",
     fontSize: 34,
   },
   afterCheck: {
-    marginTop:2,
-
     textDecorationLine: "line-through",
   },
 });
