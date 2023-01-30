@@ -26,6 +26,18 @@ export default function Container() {
     }
   }
 
+function get(){
+  data = {
+      nameTodo,
+      descTodo,
+    }
+    axios.get('http://192.168.0.2:3000/todo')
+    .then(res => {
+      console.log('Data dari fetch: ', res)
+    })
+}
+
+
   return (
     <View>
       <View style={styles.wrapper}>
