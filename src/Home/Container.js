@@ -8,9 +8,9 @@ export default function Container() {
   const [descTodo, setDescTodo] = useState("");
   const [task, setTask] = useState([]);
 
-useEffect(() => {
-get()
-}, [])
+  useEffect(() => {
+    get();
+  }, []);
 
   function submit() {
     data = {
@@ -24,24 +24,23 @@ get()
         setDescTodo("");
         setNameTodo("");
         Alert.alert("Congralute", "Your adding new task");
+        get();
       });
     } else {
       Alert.alert("Failed", "Please fill the text");
     }
   }
 
-function get(){
-  data = {
+  function get() {
+    data = {
       nameTodo,
       descTodo,
-    }
-    axios.get('http://192.168.0.2:3000/todo')
-    .then(res => {
-      setTask(res.data)
-      console.log('Data dari fetch: ', res.data)
-    })
-}
-
+    };
+    axios.get("http://192.168.0.2:3000/todo").then((res) => {
+      setTask(res.data);
+      console.log("Data dari fetch: ", res.data);
+    });
+  }
 
   return (
     <View>
@@ -49,13 +48,11 @@ function get(){
         <Text>Type Your Tasks Here</Text>
         <Text style={styles.Title}>TASKS 3</Text>
       </View>
-      {
-        task.map((data) => {
-            return <Card />
-        })
-      }
-        <Card />
-   
+      {task.map((data) => {
+        return <Card />;
+      })}
+      <Card />
+
       {/* Form Wrapper */}
       <View>
         <View style={styles.input}>
