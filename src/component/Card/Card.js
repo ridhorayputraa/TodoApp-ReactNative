@@ -26,7 +26,7 @@ const Card = ({name, desc}) => {
               </>
             </View>
             <TouchableOpacity >
-            <Text>X</Text>
+            <Text style={styles.delete}>X</Text>
             </TouchableOpacity>
             </>
           ) : (
@@ -46,6 +46,10 @@ const Card = ({name, desc}) => {
 export default Card;
 
 const styles = StyleSheet.create({
+  delete:{
+    fontSize:15,
+color:'red'
+  },
   container: {
   },
   head: {
