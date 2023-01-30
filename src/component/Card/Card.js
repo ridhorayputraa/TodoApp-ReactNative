@@ -10,24 +10,28 @@ const Card = () => {
   return (
     <>
       <View style={styles.cardWrapper}>
-        <CheckBox
-          style={styles.check}
-          value={isSelected}
-          onValueChange={setSelection}
-        />
-        {isSelected ? (
-          <View style={styles.content}>
-            <>
-              <Text style={styles.afterCheckHead}>Makan ikan bawal</Text>
-              <Text style={styles.afterCheckSub}>Makan ikan bawal</Text>
-            </>
-          </View>
-        ) : (
-          <View style={styles.content}>
-            <Text>Makan ikan bawal</Text>
-            <Text style={styles.sub}>Makan ikan bawal</Text>
-          </View>
-        )}
+        {/* <View style={styles.container}> */}
+          <CheckBox
+            style={styles.check}
+            value={isSelected}
+            onValueChange={setSelection}
+          />
+          {isSelected ? (
+            <View style={styles.content}>
+              <>
+                <Text style={styles.afterCheckHead}>Makan ikan bawal</Text>
+                <Text style={styles.afterCheckSub}>Makan ikan bawal</Text>
+              </>
+            </View>
+          ) : (
+            <View style={styles.content}>
+              <Text style={styles.head}>
+                Makan ikan bawal di knatin terdekatttttttttt
+              </Text>
+              <Text style={styles.sub}>Makan ikan bawal</Text>
+            </View>
+          )}
+        {/* </View> */}
       </View>
     </>
   );
@@ -36,17 +40,27 @@ const Card = () => {
 export default Card;
 
 const styles = StyleSheet.create({
+  container: {
+  },
+  head: {
+    fontWeight: "bold",
+    fontSize: 17,
+  },
   afterCheckHead: {
     fontWeight: "bold",
-    fontSize:18,
+    fontSize: 17,
     textDecorationLine: "line-through",
   },
   content: {
     marginTop: 1.2,
-    marginLeft: 2,
+    marginLeft: 5,
     flexDirection: "column",
   },
   cardWrapper: {
+    borderWidth: 1.5,
+    borderColor:'#f1f1f1',
+    padding: 20,
+    
     display: "flex",
     flexDirection: "row",
     alignItems: "flex-start",
@@ -57,14 +71,14 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 34,
   },
-  
-  sub:{
-    fontSize:13,
-    opacity:0.8,
+
+  sub: {
+    fontSize: 12,
+    opacity: 0.8,
   },
   afterCheckSub: {
-    fontSize:13,
-    opacity:0.8,
+    fontSize: 12,
+    opacity: 0.8,
     textDecorationLine: "line-through",
   },
 });

@@ -31,8 +31,8 @@ export default function Container() {
       <View style={styles.wrapper}>
         <Text>Type Your Tasks Here</Text>
         <Text style={styles.Title}>TASKS 3</Text>
-        <Card />
       </View>
+        <Card />
       {/* Form Wrapper */}
       <View>
         <View style={styles.input}>
