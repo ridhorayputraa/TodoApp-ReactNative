@@ -4,7 +4,7 @@ import React, { useState } from "react";
 // import CheckBox from "expo-checkbox";
 import CheckBox from "@react-native-community/checkbox";
 
-const Card = ({name, desc}) => {
+const Card = ({name, desc, deleteData}) => {
   const [isSelected, setSelection] = useState(false);
 
   return (
@@ -25,7 +25,7 @@ const Card = ({name, desc}) => {
                 <Text style={styles.afterCheckSub}>{desc}</Text>
               </>
             </View>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={deleteData}>
             <Text style={styles.delete}>X</Text>
             </TouchableOpacity>
             </>

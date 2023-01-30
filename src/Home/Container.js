@@ -36,23 +36,28 @@ const [numTask, setNumTask] = useState(0);
       nameTodo,
       descTodo,
     };
+
     axios.get("http://192.168.0.2:3000/todo").then((res) => {
       setTask(res.data);
       let data = res.data
       for(let i = 0; i < data.length ; i++){
+        if(data == 0){
+          setNumTask(0)
+        }
         let data = i + 1
         setNumTask(data)
       }
-      console.log("Data dari fetch: ", res.data);
     });
   }
 
   function deleteData(data){
     console.log(data)
-      // axios.delete(`http://192.168.0.2:3000/todo/${data}`)
-      // .then(res => {
-      //   console.log("haloo gue di click: ", res.data)
-      // })
+      axios.delete(`http://192.168.0.2:3000/todo/${data}`)
+      .then(res => {
+        console.log("haloo gue di click: ", res.data)
+        get()
+        Alert.alert('Deleted!', 'Data has been deleted')
+      })
   }
 
   return (
