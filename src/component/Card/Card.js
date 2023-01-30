@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 // import BouncyCheckbox from "react-native-bouncy-checkbox"
 // import CheckBox from "expo-checkbox";
@@ -17,12 +17,18 @@ const Card = ({name, desc}) => {
             onValueChange={setSelection}
           />
           {isSelected ? (
+            <>
+
             <View style={styles.content}>
               <>
                 <Text style={styles.afterCheckHead}>{name}</Text>
                 <Text style={styles.afterCheckSub}>{desc}</Text>
               </>
             </View>
+            <TouchableOpacity >
+            <Text>X</Text>
+            </TouchableOpacity>
+            </>
           ) : (
             <View style={styles.content}>
               <Text style={styles.head}>
@@ -52,6 +58,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "line-through",
   },
   content: {
+    flex:1,
     marginTop: 1.2,
     marginLeft: 5,
     flexDirection: "column",
