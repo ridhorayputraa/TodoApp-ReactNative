@@ -41,7 +41,7 @@ const [numTask, setNumTask] = useState(0);
       setTask(res.data);
       let data = res.data
       for(let i = 0; i < data.length ; i++){
-        if(data == 0){
+        if(data == 0       ){
           setNumTask(0)
         }
         let data = i + 1
