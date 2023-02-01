@@ -40,6 +40,7 @@ const [numTask, setNumTask] = useState(0);
     axios.get("http://192.168.0.2:3000/todo").then((res) => {
       setTask(res.data);
       let data = res.data
+      // logic biar jadi 0
       for(let i = 0; i < data.length ; i++){
         if(data == 0       ){
           setNumTask(0)
